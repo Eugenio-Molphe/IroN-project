@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-07T11:55:41.384Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/115.0" etag="Q6VEKrFkt9e3UuqSvsst" version="24.3.1" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-07T14:20:38.132Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/115.0" etag="fNEbZBbmif4mIeaPH2Bu" version="24.3.1" type="github">
   <diagram name="Page-1" id="XPCQrtxg84oxnPtzx1do">
     <mxGraphModel dx="1186" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -13,7 +13,7 @@
         <mxCell id="5hx85q__BcJgSBlU8Jjk-3" value="Enterobacteria genomes" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="50" y="340" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-4" value="Double check with Blast and Kegg" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-4" value="Double check with UniProt and Kegg" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="480" y="260" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="5hx85q__BcJgSBlU8Jjk-5" value="BlastN to obtain IroN sequences" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
