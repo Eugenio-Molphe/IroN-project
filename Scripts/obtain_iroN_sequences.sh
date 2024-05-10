@@ -13,12 +13,12 @@ out=$4 # Path to the output fasta file
 
 # Let's find the IroN genes with BlastN
 
-parallel -j8 bash scripts/blast_iroN.sh {} \ 
+parallel -j8 bash Scripts/blast_iroN.sh {} \ 
                 $db \
 	            out/iron_blast/{/.}.blast.tsv ::: $in/*
 
 # Let's extract the sequences
-parallel -j1 python scripts/extract_sequence.py \
+parallel -j1 python Scripts/extract_sequence.py \
 				out/iron_blast/{/.}.blast.tsv {} $flankingbp \
 				$out ::: $in/*.fna
 
