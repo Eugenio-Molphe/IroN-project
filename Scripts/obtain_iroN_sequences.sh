@@ -18,7 +18,7 @@ parallel -j8 bash scripts/blast_iroN.sh {} \
 	            out/iron_blast/{/.}.blast.tsv ::: $in/*
 
 # Let's extract the sequences
-parallel -j1 bash scripts/extract_sequence.sh \
+parallel -j1 python scripts/extract_sequence.py \
 				out/iron_blast/{/.}.blast.tsv {} $flankingbp \
 				$out ::: $in/*.fna
 
