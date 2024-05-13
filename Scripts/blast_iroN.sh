@@ -11,9 +11,6 @@ out=$3
 blastn \
 	-query $in \
 	-db $db \
-	-evalue  \
+	-evalue 0.001 \
 	-max_target_seqs 1000 \
-	-qcov_hsp_perc 80 \
-	-outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore sstrand" | awk '$4 > min_length' | awk '$12 > min_bitscore' > $out
-
-# Define evalue, qcov_hsp_perc, min_length, and min_bitscore
+	-outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore sstrand" > $out

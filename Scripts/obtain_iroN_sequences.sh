@@ -9,18 +9,18 @@
 in=$1 # Path to the genomes, forget about the last /
 db=$2 # Path to the IroN db, forget about the last /
 flankingbp=$3 # Number of flanking base pairs to extract
-out=$4 # Path to the output fasta file
+out=$4 # Path to the output fasta file (extension fa)
 
 # Let's find the IroN genes with BlastN
 
 parallel -j8 bash Scripts/blast_iroN.sh {} \ 
                 $db \
-	            out/iron_blast/{/.}.blast.tsv ::: $in/*
+	            /mnt/mnemo5/eugenio/IroN_project/Files/02_iron_blast/{/.}.blast.tsv ::: $in/*
 
 # Let's extract the sequences
 parallel -j1 python Scripts/extract_sequence.py \
-				out/iron_blast/{/.}.blast.tsv {} $flankingbp \
-				$out ::: $in/*.fna
+				/mnt/mnemo5/eugenio/IroN_project/Files/02_iron_blast/{/.}.blast.tsv {} $flankingbp \
+				$out ::: $in/*
 
 # Let's extract a list of the genomes that have IroN genes
-sed -n 's/^>\([0-9]*\)_.*$/\1/p' $out > Taxonomy_identity_numbers.txt
+sed -n 's/^>\([0-9]*\)_.*$/\1/p' $out > ${out%.fa}.taxonomy_identity_numbers.txt
