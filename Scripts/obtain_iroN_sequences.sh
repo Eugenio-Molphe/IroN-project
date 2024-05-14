@@ -13,14 +13,14 @@ out=$4 # Path to the output fasta file (extension fa)
 
 # Let's find the IroN genes with BlastN
 
-parallel -j8 bash Scripts/blast_iroN.sh {} \ 
-                $db \
-	            /mnt/mnemo5/eugenio/IroN_project/Files/02_iron_blast/{/.}.blast.tsv ::: $in/*
+parallel -j8 bash Scripts/blast_iroN.sh {} \
+$db \
+/mnt/mnemo5/eugenio/IroN_project/Files/02_iron_blast/{/.}.blast.tsv ::: $in/*
 
 # Let's extract the sequences
 parallel -j1 python Scripts/extract_sequence.py \
-				/mnt/mnemo5/eugenio/IroN_project/Files/02_iron_blast/{/.}.blast.tsv {} $flankingbp \
-				$out ::: $in/*
+/mnt/mnemo5/eugenio/IroN_project/Files/02_iron_blast/{/.}.blast.tsv {} $flankingbp \
+$out ::: $in/*
 
 # Let's extract a list of the genomes that have IroN genes
 sed -n 's/^>\([0-9]*\)_.*$/\1/p' $out > ${out%.fa}.taxonomy_identity_numbers.txt
