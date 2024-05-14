@@ -23,4 +23,4 @@ parallel -j1 python Scripts/extract_sequence.py \
 $out ::: $in/*
 
 # Let's extract a list of the genomes that have IroN genes
-sed -n 's/^>\([0-9]*\)_.*$/\1/p' $out > ${out%.fa}.taxonomy_identity_numbers.txt
+grep -oP '(?<=\>)[0-9]+(?=\.)' $out > ${out%.fa}.taxonomy_identity_numbers.txt
