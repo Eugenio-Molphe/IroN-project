@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-08T14:43:38.347Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/115.0" etag="GRawtlHP3WdXI0BZFXGA" version="24.3.1" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-14T11:52:46.765Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/115.0" etag="_x9UfcrOJymDkDdkEyTl" version="24.4.0" type="github">
   <diagram name="Page-1" id="XPCQrtxg84oxnPtzx1do">
-    <mxGraphModel dx="1186" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1242" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -16,13 +16,13 @@
         <mxCell id="5hx85q__BcJgSBlU8Jjk-4" value="Double check with UniProt and Kegg" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="480" y="260" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-5" value="BlastN to obtain IroN sequences" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-5" value="BlastN to obtain IroN sequences" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="630" y="470" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-6" value="List of strains who have it" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-6" value="List of strains who have it" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="710" y="680" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-7" value="Find the start codon (Prodigal)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-7" value="Find the start codon (Prodigal)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="340" y="650" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="5hx85q__BcJgSBlU8Jjk-8" value="Find the regulators and search for our regulator" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
@@ -31,10 +31,10 @@
         <mxCell id="5hx85q__BcJgSBlU8Jjk-10" value="Reference sequences for Blast" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="670" y="350" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-11" value="Gene sequences with 400 upstream bp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-11" value="Gene sequences with 400 upstream bp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="500" y="590" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-12" value="Upstream sequences" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-12" value="Upstream sequences" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="180" y="650" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="5hx85q__BcJgSBlU8Jjk-13" value="List of strains regulated by the target regulator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
