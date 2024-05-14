@@ -12,6 +12,7 @@ from Bio.Seq import Seq
 import logging
 import sys
 import pandas as pd
+import numpy as np
 
 ### Functions ###
 
@@ -39,17 +40,22 @@ def extract_sequence_from_blast(blast_in, seq_in, flankingbp):
     logger = logging.getLogger('my logger')
 
     ## read blast file
-    blast = pd.read_csv(blast_in, sep='\t', header=None)
+    try:
+        blast = pd.read_csv(blast_in, sep='\t', header=None)
+
+    except:
+        print(f'{blast_in}: Empty file. Abort')
+        return False, np.nan, np.nan, np.nan, np.nan, np.nan
     blast.columns = ['qseqid','sseqid','pident','length','mismatch','gapopen','qstart','qend','sstart','send','evalue','bitscore','sstrand']
 
     # get hit with lowest evalue
     tophit =  blast.sort_values('evalue').head(1).values[0]
-
+    
     ## read sequence file
     seq = read_fasta_file(seq_in)
 
     ## extract sequence with flankingbp
-    contig = tophit[1]
+    contig = tophit[0]
     strand = tophit[12]
 
     # change start and end, depending on strand
@@ -64,7 +70,7 @@ def extract_sequence_from_blast(blast_in, seq_in, flankingbp):
     endpos = end + flankingbp
     
     # get length of sequence
-    contig_length = len(seq[tophit[1]])
+    contig_length = len(seq[tophit[0]])
 
 
     # check if start and end are within contig length
@@ -87,7 +93,7 @@ def extract_sequence_from_blast(blast_in, seq_in, flankingbp):
     seq_to_write = seq[contig][startpos_new:endpos_new]
 
     # write sequence to output file
-    return seq_to_write, contig, strand, start - startpos_new, endpos_new - end
+    return True, seq_to_write, contig, strand, start - startpos_new, endpos_new - end
 
 def write_sequence_to_fasta(seq,id,strand,upstream_flank,downstream_flank,out):
     """
@@ -125,10 +131,16 @@ def main():
     # print(f'Generate log file {log_file}')
 
 
-    seq_to_write, contig, strand, upstream_flank, downstream_flank = extract_sequence_from_blast(blast_in, seq_in, flankingbp)
-    write_sequence_to_fasta(seq_to_write, contig, strand,upstream_flank, downstream_flank, out)
+    status, seq_to_write, contig, strand, upstream_flank, downstream_flank = extract_sequence_from_blast(blast_in, seq_in, flankingbp)
+    if status:
+        write_sequence_to_fasta(seq_to_write, contig, strand,upstream_flank, downstream_flank, out)
 
-    print(f'Finished writing sequence from {blast_in} to {out}')
+        print(f'Finished writing sequence from {blast_in} to {out}')
+        print('--------')
+    else:
+        logging.info(f"{blast_in} empty. No sequence written to {out}")
+        print(f'{blast_in}: Finished. No sequence written to {out}')
+        print('--------')
 
 
 ### Main ###
