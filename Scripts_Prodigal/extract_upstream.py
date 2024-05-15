@@ -1,7 +1,12 @@
+#### Eugenio Perez Molphe Montoya ####
+#### 15.05.2024 ####
+#### Extract the upstream sequences for further analysis ####
 
-
-
-
+'''
+Disclaimer: this is a raw starting script made by ChatGPT,
+I'll check it, debug it (I count that ChatGPT has some errors) and improve it.
+And I'll find a way to deal with the cases where we don't have 400 bp upstream.
+'''
 
 from Bio import SeqIO
 
