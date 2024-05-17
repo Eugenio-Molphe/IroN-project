@@ -4,9 +4,8 @@
 #### 15.05.2024 ####
 #### Find the start codon of each gene with Prodigal ####
 
-$fastaInput=$1
-$output=$2 # Output file in GFF format
-$proteinSequences=$3
-$nucleotideSequencesORFs=$4
+fastaInput=$1
+training=$2
+output=$3 # Output file in GFF format (.gff)
 
-prodigal -i $fastaInput -o $output -a $proteinSequences -d $nucleotideSequencesORFs -f gff
+prodigal -i $fastaInput -t $training -o $output -a ${output%.gff}.faa -d ${output%.gff}.fna -f gff

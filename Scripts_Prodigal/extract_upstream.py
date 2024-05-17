@@ -16,12 +16,41 @@ flankingbp = sys.argv[3]
 out = sys.argv[4]
 
 ### Functions ###
+def get_ORFs(gff_file):
+    '''
+    Extract the ORFs with the best score per sequence from a gff file
+    The output is a dictionary: the key will be sequences name and the values will be a tuple with the start, end, strand and score of the ORF
+    '''
+    ORFs = {}
+    with open(gff_file, 'r') as gff:
+        for line in gff:
+            if line.startswith("#"):
+                continue
+            else:
+                parts = line.strip().split()
+                if parts[2] == "CDS":
+                    # Get the important features of the ORF and its gene
+                    seq_id = parts[0]
+                    start = int(parts[3])
+                    end = int(parts[4])
+                    strand = parts[6]
+                    score = float(parts[5])
 
-def extract_upstream(fasta, gff_file, flankingbp, out):
+                    # If the sequence is not in the dictionary, add it
+                    if seq_id not in ORFs:
+                        ORFs[seq_id] = (start, end, strand, score)
+                    else:
+                        # If the sequence is in the dictionary, check if the score is better than the one in the dictionary
+                        if score > ORFs[seq_id][3]:
+                            ORFs[seq_id] = (start, end, strand, score)
+    return ORFs
+
+
+def extract_upstream(fasta, ORFs, flankingbp, out):
     '''
     Extract the upstream sequences of the genes in the gff file in the following manner:
-    1. Read the fasta file as dictionary, the keys will be the seqeunce names and the values the sequences
-    2. Read the gff file and extract the upstream sequences of the genes in the gff file
+    1. Read the fasta file as dictionary, the keys will be the sequence names and the values the sequences
+    2. Load the ORFs dictionary and extract the upstream sequences of the genes in the gff file
     3. Replace the old sequences with the upstream sequence as the values in the dictionary
     4. Write the upstream sequences to a file
     '''
@@ -29,41 +58,25 @@ def extract_upstream(fasta, gff_file, flankingbp, out):
     sequences = read_fasta_file(fasta)
 
     # Extract sequence with flankingbp
-    with open(gff, 'r') as gff_file:
-        for line in gff_file:
-            if line.startswith("#"):
-                continue
-            else:
-                # Here I obtain the characteristics of the ORFs of each sequence
-                parts = line.strip().split()
-                if parts[2] == "CDS":
-                    # Time to get the important features of the ORF and its gene
-                    start = int(parts[3]) # The start of the gene iroN sequence
-                    end = int(parts[4]) # The end of the gene iroN sequence
-                    strand = parts[6] # If the strand is + or -
+    for seq_id, (start, end, strand, score) in ORFs.items():
+        # Let's obtain the sequence by first getting the sequence of the gene iroN
+        # of the correct genome (this is where loading the sequences as a dict becomes useful)
+        # And then replace the old item (seq) of the dictionary with the upstream sequence
+        seq = sequences[seq_id]
+        if strand == "+":
+            # Let's obtain the start and ending of the upstream sequence
+            upstream_start = max(0, start - flankingbp - 1)
+            upstream_end = start - 1
 
-                    if strand == "+":
-                        # Let's obtain the start and ending of the upstream sequence
-                        upstream_start = max(0, start - flankingbp - 1)
-                        upstream_end = start - 1
+            upstream_seq = seq[upstream_start:upstream_end]
+            sequences[seq_id] = upstream_seq
+        else:
+            # Let's obtain the start and ending of the upstream sequence (for negative strands)
+            upstream_start = end
+            upstream_end = min(len(seq), end + flankingbp)
 
-                        # Let's obtain the sequence by first getting the sequence of the gene iroN
-                        # of the correct genome (this is where loading the sequences as a dict becomes useful)
-                        # And then replace the old item (seq) of the dictionary with the upstream sequence
-                        seq = sequences[parts[0]]
-                        upstream_seq = seq[upstream_start:upstream_end]
-                        sequences[parts[0]] = upstream_seq
-                    else:
-                        # Let's obtain the start and ending of the upstream sequence (for negative strands)
-                        upstream_start = end
-                        upstream_end = min(len(seq), end + flankingbp)
-
-                        # Let's obtain the sequence by first getting the sequence of the gene iroN
-                        # of the correct genome (this is where loading the sequences as a dict becomes useful)
-                        # And then replace the old item (seq) of the dictionary with the upstream sequence
-                        seq = sequences[parts[0]]
-                        upstream_seq = seq[upstream_start:upstream_end].reverse_complement()
-                        sequences[parts[0]] = upstream_seq
+            upstream_seq = seq[upstream_start:upstream_end].reverse_complement()
+            sequences[seq_id] = upstream_seq
         
         # Write the upstream sequences to a file
         with open(out, 'w') as f:
