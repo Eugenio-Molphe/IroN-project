@@ -82,3 +82,11 @@ def extract_upstream(fasta, ORFs, flankingbp, out):
         with open(out, 'w') as f:
             for key, value in sequences.items():
                 f.write(f">{key}_upstream_seq\n{value}")
+
+### Run the functions ###
+
+# LEt's get the ORFs
+ORFs = get_ORFs(gff)
+
+# And now, let's extract the upstream sequences
+extract_upstream(fasta, ORFs, flankingbp, out)
