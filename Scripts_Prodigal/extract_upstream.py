@@ -4,16 +4,17 @@
 
 ### Load packages ###
 import sys
+from Bio.Seq import Seq
 
 # Functions made by Nico
 sys.path.append('/mnt/mnemo5/eugenio/IroN_project/Scripts/IroN-project/Scripts_BlastN/')
 from extract_sequence import read_fasta_file
 
 ### Load th arguments ###
-fasta = sys.argv[1]
-gff = sys.argv[2]
-flankingbp = sys.argv[3]
-out = sys.argv[4]
+fasta = sys.argv[1] # The fasta file with the sequences (400 bp + blasted sequence + 400 bp)
+gff = sys.argv[2] # The gff file with the ORFs (Prodigal output)
+flankingbp = sys.argv[3] # The number of flanking bp to extract
+out = sys.argv[4] # The output
 
 ### Functions ###
 def get_ORFs(gff_file):
@@ -54,14 +55,20 @@ def extract_upstream(fasta, ORFs, flankingbp, out):
     3. Replace the old sequences with the upstream sequence as the values in the dictionary
     4. Write the upstream sequences to a file
     '''
-    # Read blasta file
+    # flankingbp is the number of bp to extract upstream of the gene
+    # Since it's an argument, it's an string, so let's convert it to an integer
+    flankingbp = int(flankingbp)
+    
+    # Let's transform the fasta file into a dictionary with keys as the sequence names and values as the sequences
     sequences = read_fasta_file(fasta)
+    upstream_sequences = {}
 
     # Extract sequence with flankingbp
     for seq_id, (start, end, strand, score) in ORFs.items():
         # Let's obtain the sequence by first getting the sequence of the gene iroN
         # of the correct genome (this is where loading the sequences as a dict becomes useful)
         # And then replace the old item (seq) of the dictionary with the upstream sequence
+
         seq = sequences[seq_id]
         if strand == "+":
             # Let's obtain the start and ending of the upstream sequence
@@ -69,19 +76,27 @@ def extract_upstream(fasta, ORFs, flankingbp, out):
             upstream_end = start - 1
 
             upstream_seq = seq[upstream_start:upstream_end]
-            sequences[seq_id] = upstream_seq
+            upstream_sequences[seq_id] = upstream_seq
         else:
             # Let's obtain the start and ending of the upstream sequence (for negative strands)
             upstream_start = end
             upstream_end = min(len(seq), end + flankingbp)
 
-            upstream_seq = seq[upstream_start:upstream_end].reverse_complement()
-            sequences[seq_id] = upstream_seq
+            upstream_seq = seq[upstream_start:upstream_end]
+            
+            # Since the sequence is in the negative strand, we need to reverse complement it
+            upstream_seq = Seq(upstream_seq).reverse_complement()
+            upstream_seq = str(upstream_seq)
+            upstream_sequences[seq_id] = upstream_seq
         
+        print(seq_id)
+        print(upstream_seq)
+        print(start, end, strand, score)
+
         # Write the upstream sequences to a file
         with open(out, 'w') as f:
-            for key, value in sequences.items():
-                f.write(f">{key}_upstream_seq\n{value}")
+            for key, value in upstream_sequences.items():
+                f.write(f">{key}_upstream_seq\n{value}\n")
 
 ### Run the functions ###
 
