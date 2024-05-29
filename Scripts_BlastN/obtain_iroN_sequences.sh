@@ -15,11 +15,11 @@ out=$4 # Path to the output fasta file (extension fa)
 
 parallel -j8 bash /mnt/mnemo5/eugenio/IroN_project/Scripts/IroN-project/Scripts_BlastN/blast_iroN.sh {} \
 $db \
-/mnt/mnemo5/eugenio/IroN_project/Files/XX_Try_800_bp/02_iron_blast/{/.}.blast.tsv ::: $in/*
+/mnt/mnemo5/eugenio/IroN_project/Files/02_iron_blast/{/.}.blast.tsv ::: $in/*
 
 # Let's extract the sequences
 parallel -j1 python /mnt/mnemo5/eugenio/IroN_project/Scripts/IroN-project/Scripts_BlastN/extract_sequence.py \
-/mnt/mnemo5/eugenio/IroN_project/Files/XX_Try_800_bp/02_iron_blast/{/.}.blast.tsv {} $flankingbp \
+/mnt/mnemo5/eugenio/IroN_project/Files/02_iron_blast/{/.}.blast.tsv {} $flankingbp \
 $out ::: $in/*
 
 # Let's extract a list of the genomes that have IroN genes
