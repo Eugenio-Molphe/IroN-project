@@ -17,7 +17,7 @@ from extract_sequence import read_fasta_file
 
 ### Now let's define the path to the fasta file and the output directory
 fasta = sys.argv[1] # The fasta file with the upstream sequences
-output = sys.argv[2] # The output directory where the results will be stored
+outputDir = sys.argv[2] # The output directory where the results will be stored
 
 ### Let's extract the sequence
 seq = read_fasta_file(fasta)
@@ -27,7 +27,7 @@ if len(seq.keys()) == 1:
         sequenceInput += '>' + key + "\n" + value + '\n'
 
         # Let's prepare the output file
-        outputFileName = output + '/' + key + '_BProm.txt'
+        outputFileName = outputDir + '/' + key + '.txt'
 else:
     print('There is more than one sequence in the fasta file. Please provide a fasta file with only one sequence.')
     sys.exit()
