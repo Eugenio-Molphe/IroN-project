@@ -1,7 +1,7 @@
 #### Eugenio Perez Molphe Montoya ####
 #### 30.05.2024 ####
 #### So BProm expects one sequence, so I should make a directory and 
-# divide my usptream seqeunce fasta file into a lot of smaller fasta files 
+# divide my usptream sequence fasta file into a lot of smaller fasta files 
 # with only one sequence per file  ####
 
 # Import packages and functions
