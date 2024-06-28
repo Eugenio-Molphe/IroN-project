@@ -21,29 +21,41 @@ def get_promoters(file, promotersDict):
     """
 
     # First, let's open the file
+
     with open(file, 'r') as f:
         # Let's get the genome name
         fileLines = f.readlines()
 
     # This file contains an identified position and the promotor that may be there
     # So, let's get a list with the promoters
+
+    # First, I'll filter the lines before the first promoter
+    startProcessing = False
+    filteredLines = []
+    for line in fileLines:
+        if line.startswith("For promoter"):
+            startProcessing = True
+        if startProcessing:
+            filteredLines.append(line)
+
+    # Then, I'll get the promoters
     promoters = []
     currentPromoter = []
     # Iterate over the lines and dump the possible promoters into the currentPromoter list
-    for line in fileLines:
+    for line in filteredLines:
         if line.startswith("For promoter"):
             promoters.append(currentPromoter)
             currentPromoter = []
+            continue
         # Skip adding the "For promoter" line to the current section, we only care about the identified promoters
-        continue
-    currentPromoter.append(line)
+        currentPromoter.append(line)
 
     # Don't forget to add the last section if it exists
     if currentPromoter:
         promoters.append(currentPromoter)
     
     # The first one is the name of the genome, we don't need it in the list per se
-    genomeName = promoters.pop(0)
+    genomeName = fileLines[0].split(".")[0].strip('>')
 
     # Now, let's get the list of the most possible promoters per each identified promoters
     # In other words, the promoters influencing iroN
@@ -55,16 +67,21 @@ def get_promoters(file, promotersDict):
         for oligo in promoter:
             oligo = oligo.strip().split(" ")
             namePromoter = oligo[0].strip(':') # We've got the name of the promoter
-            score = int(oligo[-1])
-            promoterDict[score] = namePromoter
-        
+            if oligo[-1] != 'sites':
+                score = int(oligo[-1])
+                promoterDict[score] = namePromoter
+
         # Now, let's get the promoter with the highest score
-        maxScore = max(promoterDict.keys())
-        bestPromoter = promoterDict[maxScore]
-        iroNpromoters.append(bestPromoter)
-    
+        if promoterDict:
+            maxScore = max(promoterDict.keys())
+            bestPromoter = promoterDict[maxScore]
+            iroNpromoters.append(bestPromoter)
+
     # Finally, let's save the result in the dictionary
-    promotersDict[genomeName.strip('>')] = iroNpromoters
+    if iroNpromoters:
+        promotersDict[genomeName] = iroNpromoters
+        
+    return promotersDict
 
 
 
@@ -77,7 +94,7 @@ promotersDict = {}
 fileList = os.listdir(inputDir)
 
 for file in fileList:
-    get_promoters(file, promotersDict)
+    get_promoters(inputDir + '/' + file, promotersDict)
 
 ## Finally, let's create the pandas dataframe
 
