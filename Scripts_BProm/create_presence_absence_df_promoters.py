@@ -59,27 +59,44 @@ def get_promoters(file, promotersDict):
 
     # Now, let's get the list of the most possible promoters per each identified promoters
     # In other words, the promoters influencing iroN
+    ######## The parts commented with quotes are for the case where we want to get the best promoter per genome
+    ######## I'll add a # symbol to the lines that grab everything
+    '''
     iroNpromoters = []
+    '''
 
     for promoter in promoters:
         # I'll create a dictionary to store the information: keys as scores and values as the name of the promoter
+        '''
         promoterDict = {}
+        '''
         for oligo in promoter:
             oligo = oligo.strip().split(" ")
             namePromoter = oligo[0].strip(':') # We've got the name of the promoter
             if oligo[-1] != 'sites':
+                '''
                 score = int(oligo[-1])
                 promoterDict[score] = namePromoter
+                '''
+                if genomeName in promotersDict: #
+                    promotersDict[genomeName].append(namePromoter) #
+                else: #
+                    promotersDict[genomeName] = [namePromoter] #
+
 
         # Now, let's get the promoter with the highest score
+        '''
         if promoterDict:
             maxScore = max(promoterDict.keys())
             bestPromoter = promoterDict[maxScore]
             iroNpromoters.append(bestPromoter)
+        '''
 
     # Finally, let's save the result in the dictionary
+    '''
     if iroNpromoters:
         promotersDict[genomeName] = iroNpromoters
+    '''
         
     return promotersDict
 
