@@ -17,6 +17,7 @@ flankingbp = sys.argv[3] # The number of flanking bp to extract
 out = sys.argv[4] # The output
 
 ### Functions ###
+
 def get_ORFs(gff_file):
     '''
     Extract the ORFs with the best score per sequence from a gff file
@@ -29,21 +30,21 @@ def get_ORFs(gff_file):
                 continue
             else:
                 parts = line.strip().split()
-                if parts[2] == "CDS":
-                    # Get the important features of the ORF and its gene
-                    seq_id = parts[0]
-                    start = int(parts[3])
-                    end = int(parts[4])
-                    strand = parts[6]
-                    score = float(parts[5])
+            if parts[2] == "CDS":
+                # Get the important features of the ORF and its gene
+                seq_id = parts[0]
+                start = int(parts[3])
+                end = int(parts[4])
+                strand = parts[6]
+                score = float(parts[5])
 
-                    # If the sequence is not in the dictionary, add it
-                    if seq_id not in ORFs:
+                # If the sequence is not in the dictionary, add it
+                if seq_id not in ORFs:
+                    ORFs[seq_id] = (start, end, strand, score)
+                else:
+                    # If the sequence is in the dictionary, check if the score is better than the one in the dictionary
+                    if score > ORFs[seq_id][3]:
                         ORFs[seq_id] = (start, end, strand, score)
-                    else:
-                        # If the sequence is in the dictionary, check if the score is better than the one in the dictionary
-                        if score > ORFs[seq_id][3]:
-                            ORFs[seq_id] = (start, end, strand, score)
     return ORFs
 
 
@@ -101,7 +102,8 @@ def extract_upstream(fasta, ORFs, flankingbp, out):
 ### Run the functions ###
 
 # LEt's get the ORFs
-ORFs = get_ORFs(gff)
+if __name__ == "__main__":
+    ORFs = get_ORFs(gff)
 
 # And now, let's extract the upstream sequences
 extract_upstream(fasta, ORFs, flankingbp, out)

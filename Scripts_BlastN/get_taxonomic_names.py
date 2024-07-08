@@ -1,6 +1,6 @@
 #### Eugenio Perez Molphe Montoya ####
 #### 14.05.2024 ####
-#### Get a list of taxopnomic names for our bacteria ####
+#### Get a list of taxonomic names for our bacteria ####
 
 ### Libraries ###
 import sys
