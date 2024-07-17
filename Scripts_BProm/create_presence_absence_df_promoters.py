@@ -190,20 +190,20 @@ for files in fileList:
 # Extract all the unique promoters from all the genomes to get the columns of the dataframe
 allPromoters = set()
 
-#for promoterList in allPromotersDict.values():  # For a dataframe with all the promoters
-#    for promoter in promoterList:
-#        allPromoters.add(promoter)
-#allPromoters = sorted(list(allPromoters))
-
-for promoter in bestPromotersDict.values():  # For a dataframe with only the best promoters
-    allPromoters.update(promoter)
+for promoterList in allPromotersDict.values():  # For a dataframe with all the promoters
+    for promoter in promoterList:
+        allPromoters.add(promoter)
 allPromoters = sorted(list(allPromoters))
+
+#for promoter in bestPromotersDict.values():  # For a dataframe with only the best promoters
+#    allPromoters.update(promoter)
+#allPromoters = sorted(list(allPromoters))
 
 # Create the dataframe with the genomes as rows and promoters as columns
 df = pd.DataFrame(0, index = allPromotersDict.keys(), columns = allPromoters)
 
 # Let's fill the dataframe, the same applies with allPromotersDict or bestPromotersDict
-for genome, promoters in bestPromotersDict.items():
+for genome, promoters in allPromotersDict.items():
     for promoter in promoters:
         df.loc[genome, promoter] = 1
 
