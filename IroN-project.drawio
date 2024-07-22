@@ -1,116 +1,92 @@
-<mxfile host="app.diagrams.net" modified="2024-07-17T11:49:04.178Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/115.0" etag="UN0hahvq7PlM_wOP0FQx" version="24.7.0" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-22T14:02:25.913Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/115.0" etag="pQVkrh3EbDs_WZ_5T0mb" version="24.7.1" type="github">
   <diagram name="Page-1" id="XPCQrtxg84oxnPtzx1do">
-    <mxGraphModel dx="1051" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="876" dy="641" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-1" value="75 reference sequences" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="270" y="200" width="120" height="60" as="geometry" />
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-2" value="1. Annotate iroN genes with Bakta" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="50" y="190" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-2" value="1. Annotation with Bakta" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="70" y="130" width="120" height="80" as="geometry" />
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-3" value="1158 Enterobacteria genomes (~100 per genus)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="200" y="30" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-3" value="Enterobacteria genomes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="50" y="340" width="120" height="60" as="geometry" />
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-8" value="7. Find the promoters with BProm" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="390" y="680" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-4" value="Double check with UniProt and Kegg" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="480" y="260" width="120" height="80" as="geometry" />
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-13" value="Promoters regulating iroN expression on the genomes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="280" y="790" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-5" value="BlastN to obtain IroN sequences" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="630" y="470" width="120" height="80" as="geometry" />
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-2" target="JB7MgtdJx0A8OHqEg8VY-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="440" as="sourcePoint" />
+            <mxPoint x="270" y="230" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-6" value="List of strains who have it" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="710" y="680" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-7" value="Find the start codon (Prodigal)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="340" y="650" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-8" value="Find the regulators and search for our regulator" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="30" y="570" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-10" value="Reference sequences for Blast" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="670" y="350" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-11" value="Gene sequences with 400 upstream bp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="500" y="590" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-12" value="Upstream sequences" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="180" y="650" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-13" value="List of strains regulated by the target regulator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="20" y="740" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-2" target="5hx85q__BcJgSBlU8Jjk-1" edge="1">
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-3" target="5hx85q__BcJgSBlU8Jjk-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="400" y="440" as="sourcePoint" />
             <mxPoint x="450" y="390" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="110" y="60" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-3" target="5hx85q__BcJgSBlU8Jjk-2" edge="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-4" value="&lt;div align=&quot;left&quot;&gt;&amp;nbsp; 75 reference iroN&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;sequences&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="270" y="190" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-8" value="2.Search for iroN genes with BlastN" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="460" y="190" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-9" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.846;exitY=0.492;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="JB7MgtdJx0A8OHqEg8VY-4" target="JB7MgtdJx0A8OHqEg8VY-8">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="440" as="sourcePoint" />
-            <mxPoint x="450" y="390" as="targetPoint" />
+            <mxPoint x="400" y="230" as="sourcePoint" />
+            <mxPoint x="470" y="230" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-1" target="5hx85q__BcJgSBlU8Jjk-4" edge="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-10" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="JB7MgtdJx0A8OHqEg8VY-8">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="440" as="sourcePoint" />
-            <mxPoint x="450" y="390" as="targetPoint" />
+            <mxPoint x="520" y="110" as="sourcePoint" />
+            <mxPoint x="390" y="310" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-4" target="5hx85q__BcJgSBlU8Jjk-10" edge="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-15" value="&lt;div&gt;&amp;nbsp; Gene sequences of&amp;nbsp;&lt;/div&gt;&lt;div&gt;hits with 400&amp;nbsp;&lt;/div&gt;&lt;div&gt;upstream and &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;downstream bp&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="450" y="330" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="JB7MgtdJx0A8OHqEg8VY-8" target="JB7MgtdJx0A8OHqEg8VY-15">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="440" as="sourcePoint" />
-            <mxPoint x="450" y="390" as="targetPoint" />
+            <mxPoint x="580" y="410" as="sourcePoint" />
+            <mxPoint x="630" y="360" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-18" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-10" target="5hx85q__BcJgSBlU8Jjk-5" edge="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-18" value="4. Find the start codon with Prodigal" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="200" y="330" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="JB7MgtdJx0A8OHqEg8VY-15" target="JB7MgtdJx0A8OHqEg8VY-18">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="440" as="sourcePoint" />
-            <mxPoint x="450" y="390" as="targetPoint" />
+            <mxPoint x="260" y="450" as="sourcePoint" />
+            <mxPoint x="310" y="400" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-5" target="5hx85q__BcJgSBlU8Jjk-11" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="440" as="sourcePoint" />
-            <mxPoint x="450" y="390" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-20" value="&lt;div align=&quot;center&quot;&gt;&amp;nbsp;Position of the&amp;nbsp;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;ORFs&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="300" y="440" width="135" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-20" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-5" target="5hx85q__BcJgSBlU8Jjk-6" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="440" as="sourcePoint" />
-            <mxPoint x="450" y="390" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-21" value="&lt;div&gt;&amp;nbsp;Gene sequences&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;from ORF&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="80" y="440" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-11" target="5hx85q__BcJgSBlU8Jjk-7" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="440" as="sourcePoint" />
-            <mxPoint x="450" y="390" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-23" value="5.Verify sequences&#39; identity as iroN with XYZ db (BlastN)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="150" y="570" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-22" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-7" target="5hx85q__BcJgSBlU8Jjk-12" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="440" as="sourcePoint" />
-            <mxPoint x="450" y="390" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-24" value="Genomes with corroborated annotated iroN" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="150" y="690" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-23" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-12" target="5hx85q__BcJgSBlU8Jjk-8" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="440" as="sourcePoint" />
-            <mxPoint x="450" y="390" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-25" value="6. Extract upstream sequences (300 bp)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="440" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-24" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-8" target="5hx85q__BcJgSBlU8Jjk-13" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="440" as="sourcePoint" />
-            <mxPoint x="450" y="390" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-26" value="&lt;div&gt;Upstream&amp;nbsp;&lt;/div&gt;&lt;div&gt;sequences&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="390" y="570" width="107.5" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-25" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-3" target="5hx85q__BcJgSBlU8Jjk-5" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="440" as="sourcePoint" />
-            <mxPoint x="450" y="390" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-1" value="7474 extra Salmonella genomes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="70" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
