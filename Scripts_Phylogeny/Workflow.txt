@@ -1,0 +1,7 @@
+So I'm writing here what I'm doing since I'm doing everything directly in a single shell script. This is a fairly easy workflow that don't need customized scripts (at least not as the other workflows in this project).
+
+First step: I have the directory with my Salmonella genomes and also a batchfile with the fasta file name and my genome name with a little flag to indicate that it has argR.
+            I run the following command to identify the marker genes in the genomes:
+                gtdbtk identify --genome_dir GENOME_DIR --batchfile BATCHFILE --out_dir OUT_DIR_IDENTIFY --cpus NUM_CPUs
+
+Second step: 
