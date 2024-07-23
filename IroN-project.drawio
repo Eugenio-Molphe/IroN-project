@@ -1,19 +1,19 @@
-<mxfile host="app.diagrams.net" modified="2024-07-23T08:30:41.940Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/115.0" etag="8RPTuLLUb_tAZTzrWrMv" version="24.7.3" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-23T08:43:00.144Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/115.0" etag="Q5VRBfBPsMn0H_uSrUfp" version="24.7.3" type="github">
   <diagram name="Page-1" id="XPCQrtxg84oxnPtzx1do">
-    <mxGraphModel dx="1051" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1236" dy="905" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-2" value="1. Annotate iroN genes with Bakta" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-2" value="1. Annotate iroN genes with Bakta" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c9704c;strokeColor=#862F0D;" parent="1" vertex="1">
           <mxGeometry x="80" y="200" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-3" value="1158 Enterobacteria genomes (~100 per genus)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-3" value="1158 Enterobacteria genomes (~100 per genus)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#85917C;strokeColor=#292D26;" parent="1" vertex="1">
           <mxGeometry x="220" y="30" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-8" value="7. Find the promoters with BProm" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-8" value="7. Find the promoters with BProm" style="ellipse;whiteSpace=wrap;html=1;fillColor=#CA714D;strokeColor=#862F0D;" parent="1" vertex="1">
           <mxGeometry x="390" y="680" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="5hx85q__BcJgSBlU8Jjk-13" value="Promoters regulating iroN expression on the genomes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="5hx85q__BcJgSBlU8Jjk-13" value="Promoters regulating iroN expression on the genomes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#85917C;strokeColor=#292D26;" parent="1" vertex="1">
           <mxGeometry x="290" y="790" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="5hx85q__BcJgSBlU8Jjk-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5hx85q__BcJgSBlU8Jjk-2" target="JB7MgtdJx0A8OHqEg8VY-4" edge="1">
@@ -31,10 +31,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JB7MgtdJx0A8OHqEg8VY-4" value="&lt;div align=&quot;left&quot;&gt;&amp;nbsp; 75 reference iroN&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;sequences&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=left;" parent="1" vertex="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-4" value="&lt;div align=&quot;left&quot;&gt;&amp;nbsp; 75 reference iroN&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;sequences&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=left;fillColor=#FFE9DB;strokeColor=#E5AA85;" parent="1" vertex="1">
           <mxGeometry x="270" y="200" width="130" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="JB7MgtdJx0A8OHqEg8VY-8" value="2.Search for iroN genes with BlastN" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-8" value="2.Search for iroN genes with BlastN" style="ellipse;whiteSpace=wrap;html=1;fillColor=#CA714D;strokeColor=#862f0d;" parent="1" vertex="1">
           <mxGeometry x="460" y="200" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="JB7MgtdJx0A8OHqEg8VY-9" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.846;exitY=0.492;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="JB7MgtdJx0A8OHqEg8VY-4" target="JB7MgtdJx0A8OHqEg8VY-8" edge="1">
@@ -49,7 +49,7 @@
             <mxPoint x="390" y="310" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JB7MgtdJx0A8OHqEg8VY-15" value="&lt;div&gt;&amp;nbsp; Gene sequences of&amp;nbsp;&lt;/div&gt;&lt;div&gt;hits with 400&amp;nbsp;&lt;/div&gt;&lt;div&gt;upstream and &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;downstream bp&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=left;" parent="1" vertex="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-15" value="&lt;div&gt;&amp;nbsp; Gene sequences of&amp;nbsp;&lt;/div&gt;&lt;div&gt;hits with 400&amp;nbsp;&lt;/div&gt;&lt;div&gt;upstream and &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;downstream bp&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=left;fillColor=#FFE9DB;strokeColor=#E5AA85;" parent="1" vertex="1">
           <mxGeometry x="455" y="330" width="130" height="80" as="geometry" />
         </mxCell>
         <mxCell id="JB7MgtdJx0A8OHqEg8VY-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JB7MgtdJx0A8OHqEg8VY-8" target="JB7MgtdJx0A8OHqEg8VY-15" edge="1">
@@ -58,7 +58,7 @@
             <mxPoint x="630" y="360" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JB7MgtdJx0A8OHqEg8VY-18" value="4. Find the start codon with Prodigal" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-18" value="4. Find the start codon with Prodigal" style="ellipse;whiteSpace=wrap;html=1;fillColor=#CA714D;strokeColor=#862F0D;" parent="1" vertex="1">
           <mxGeometry x="170" y="330" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="JB7MgtdJx0A8OHqEg8VY-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="JB7MgtdJx0A8OHqEg8VY-15" target="JB7MgtdJx0A8OHqEg8VY-18" edge="1">
@@ -67,25 +67,25 @@
             <mxPoint x="310" y="400" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JB7MgtdJx0A8OHqEg8VY-20" value="&lt;div align=&quot;center&quot;&gt;&amp;nbsp;Position of the&amp;nbsp;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;ORFs&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=center;" parent="1" vertex="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-20" value="&lt;div align=&quot;center&quot;&gt;&amp;nbsp;Position of the&amp;nbsp;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;ORFs&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=center;fillColor=#FFE9DB;strokeColor=#E5AA85;" parent="1" vertex="1">
           <mxGeometry x="240" y="440" width="135" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="JB7MgtdJx0A8OHqEg8VY-21" value="&lt;div&gt;&amp;nbsp;Gene sequences&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;from ORF&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=left;" parent="1" vertex="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-21" value="&lt;div&gt;&amp;nbsp;Gene sequences&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;from ORF&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=left;fillColor=#FFE9DB;strokeColor=#E5AA85;" parent="1" vertex="1">
           <mxGeometry x="80" y="440" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="JB7MgtdJx0A8OHqEg8VY-23" value="5.Verify sequences&#39; identity as iroN with XYZ db (BlastN)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-23" value="5.Verify sequences&#39; identity as iroN with XYZ db (BlastN)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#CA714D;strokeColor=#862F0D;" parent="1" vertex="1">
           <mxGeometry x="170" y="560" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="JB7MgtdJx0A8OHqEg8VY-24" value="Genomes with corroborated annotated iroN" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-24" value="Genomes with corroborated annotated iroN" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#85917C;strokeColor=#292D26;" parent="1" vertex="1">
           <mxGeometry x="170" y="690" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="JB7MgtdJx0A8OHqEg8VY-25" value="6. Extract upstream sequences (300 bp)" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-25" value="6. Extract upstream sequences (300 bp)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#CA714D;strokeColor=#862F0D;" parent="1" vertex="1">
           <mxGeometry x="440" y="440" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="JB7MgtdJx0A8OHqEg8VY-26" value="&lt;div&gt;Upstream&amp;nbsp;&lt;/div&gt;&lt;div&gt;sequences&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=center;" parent="1" vertex="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-26" value="&lt;div&gt;Upstream&amp;nbsp;&lt;/div&gt;&lt;div&gt;sequences&lt;/div&gt;" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;align=center;fillColor=#FFE9DB;strokeColor=#E5AA85;" parent="1" vertex="1">
           <mxGeometry x="396.25" y="560" width="107.5" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="JB7MgtdJx0A8OHqEg8VY-1" value="7474 extra Salmonella genomes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="JB7MgtdJx0A8OHqEg8VY-1" value="7474 extra Salmonella genomes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#85917C;strokeColor=#292D26;" parent="1" vertex="1">
           <mxGeometry x="305" y="70" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="HDMEeG1fjW0iGM3FwmQQ-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="JB7MgtdJx0A8OHqEg8VY-18" target="JB7MgtdJx0A8OHqEg8VY-21">
