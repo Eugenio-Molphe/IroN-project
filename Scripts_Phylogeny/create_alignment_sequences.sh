@@ -6,12 +6,11 @@
 
 # Input arguments
 in=$1 # Input directory
-batchfile=$2 # Batch file
-out=$3 # Output directory (will contain both the alignment and the orf positions)
-threads=$4 # Number of CPUs
+out=$2 # Output directory (will contain both the alignment and the orf positions)
+threads=$3 # Number of CPUs
 
 # Identify the marker genes of my sequence
-gtdbtk identify --genome_dir $in --batchfile $batchfile --out_dir "$out/Marker_genes" --cpus $threads
+gtdbtk identify --genome_dir $in --out_dir "$out/Marker_genes" --cpus $threads --force
 
 # Extract the marker genes and align them for a phylogenetic tree
 gtdbtk align --identify_dir "$out/Marker_genes" --out_dir "$out/Alignment" --skip_gtdb_refs --cpus $threads
