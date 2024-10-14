@@ -59,12 +59,8 @@ def extract_sequence_from_blast(blast_in, seq_in, flankingbp):
     strand = tophit[12]
 
     # change start and end, depending on strand
-    if strand == 'plus':
-        start = int(tophit[6])
-        end = int(tophit[7])
-    else:
-        start = int(tophit[7])
-        end = int(tophit[6])
+    start = int(tophit[6])
+    end = int(tophit[7])
 
     startpos = start - flankingbp
     endpos = end + flankingbp

@@ -208,9 +208,9 @@ for genome, promoters in allPromotersDict.items():
         df.loc[genome, promoter] = 1
 
 # This extra line add one to the promoters that were judged to be the ones with the highest score
-#for genome, promoters in bestPromotersDict.items():
-#    for promoter in promoters:
-#        df.loc[genome, promoter] += 1
+for genome, promoters in bestPromotersDict.items():
+    for promoter in promoters:
+        df.loc[genome, promoter] += 1
 
 # Save the dataframe
 df.to_csv(outputDf, sep = '\t', index=True, header=True)

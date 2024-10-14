@@ -7,10 +7,10 @@ import sys
 from Bio.Seq import Seq
 
 # Functions made by Nico
-sys.path.append('/mnt/mnemo5/eugenio/IroN_project/Scripts/IroN-project/Scripts_BlastN/')
+sys.path.append('/mnt/mnemo5/eugenio/IroN_project/Scripts/IroN-project/2_BlastN/')
 from extract_sequence import read_fasta_file
 
-### Load th arguments ###
+### Load the arguments ###
 fasta = sys.argv[1] # The fasta file with the sequences (400 bp + blasted sequence + 400 bp)
 gff = sys.argv[2] # The gff file with the ORFs (Prodigal output)
 flankingbp = sys.argv[3] # The number of flanking bp to extract

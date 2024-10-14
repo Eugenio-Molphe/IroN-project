@@ -9,7 +9,7 @@ import os
 import sys
 
 # Functions made by Nico
-sys.path.append('/mnt/mnemo5/eugenio/IroN_project/Scripts/IroN-project/Scripts_BlastN/')
+sys.path.append('/mnt/mnemo5/eugenio/IroN_project/Scripts/IroN-project/2_BlastN/')
 from extract_sequence import read_fasta_file
 
 # Define the path to the fasta file
