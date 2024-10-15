@@ -6,9 +6,10 @@
 
 ### Importing libraries
 from Bio import Entrez
-from Bio import SeqIO
 import pandas as pd
 import sys
+from urllib.error import HTTPError
+import time
 
 ### Get the arguments
 # The input file (csv file with the accession numbers)
@@ -17,15 +18,37 @@ inputFile = sys.argv[1]
 outputFile = sys.argv[2]
 
 ### The functions
-# Function to fetch taxon and strain
-def get_assembly_id(accession):
-    # Fetch the assembly ID
-    handle = Entrez.esearch(db="assembly", term=accession)
-    result = Entrez.read(handle)
-    assembly_id = result['IdList'][0]
-    return assembly_id
+# Function to get the assembly ID of a genome from NCBI
+def get_assembly_id(accession, max_retries=10, retry_delay=5):
+    attempt = 0
+    while attempt < max_retries:
+        try:
+            # Fetch the assembly ID from the NCBI server
+            handle = Entrez.esearch(db="assembly", term=accession)
+            result = Entrez.read(handle)
+            handle.close()
 
+            # Return the first assembly ID from the result
+            assembly_id = result['IdList'][0]
 
+            if assembly_id != '':
+                # Finish the loop if the attempt is successful
+                attempt = max_retries
+
+            return assembly_id
+
+        except (HTTPError, RuntimeError) as e:
+            # Print the error and retry if the attempt fails
+            print(f"Error fetching assembly ID for {accession}: {e}")
+            attempt += 1
+            if attempt < max_retries:
+                print(f"Retrying... (Attempt {attempt + 1}/{max_retries})")
+                time.sleep(retry_delay)  # Wait before retrying
+            else:
+                print(f"Failed to fetch assembly ID for {accession} after {max_retries} attempts.")
+                return None  # Return None if all retries fail
+
+# Function to fetch taxon and strain from NCBI
 def fetch_taxon_and_strain(accession):
     # Get the internal assembly ID
     assemblyId = get_assembly_id(accession)
@@ -38,14 +61,19 @@ def fetch_taxon_and_strain(accession):
     # Extracting Taxon and Strain
     assembly_info = record['DocumentSummarySet']['DocumentSummary'][0]
     taxon = assembly_info['Organism']
+    strain = ''
+
     try:
         if assembly_info['Biosource']['InfraspeciesList'][1]['Sub_type'] == 'strain':
             strain = assembly_info['Biosource']['InfraspeciesList'][1]['Sub_value']
     except:
-        if assembly_info['Biosource']['InfraspeciesList'][0]['Sub_type'] == 'strain':
-            strain = assembly_info['Biosource']['InfraspeciesList'][0]['Sub_value']
-        else:
-            strain = 'serotype ' + assembly_info['Biosource']['InfraspeciesList'][0]['Sub_value']
+        try:
+            if assembly_info['Biosource']['InfraspeciesList'][0]['Sub_type'] == 'strain':
+                strain = assembly_info['Biosource']['InfraspeciesList'][0]['Sub_value']
+            else:
+                strain = 'serotype ' + assembly_info['Biosource']['InfraspeciesList'][0]['Sub_value']
+        except:
+            strain = ''
 
     return taxon, strain
 
