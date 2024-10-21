@@ -36,7 +36,7 @@ for genome in "$EcoliDir"/*; do
     echo "Processing genome: $prefix"
 
 # Run Prokka
-    prokka --outdir "$outputDir"/"$prefix" --prefix "$prefix" "$genome"
+    prokka --outdir "$outputDir"/"$prefix" --prefix "$prefix" "$genome" --centre X --compliant
     echo "Prokka finished annotating the genomes :D"
 
 # Find the immunity genes, starting by mchB
