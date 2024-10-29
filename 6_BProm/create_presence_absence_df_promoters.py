@@ -59,7 +59,7 @@ def get_best_promoters(file, promotersDict):
         promoters.append(currentPromoter)
     
     # The first one is the name of the genome, we don't need it in the list per se
-    genomeName = fileLines[0].split(".")[0].strip('>')
+    genomeName = fileLines[0].split("_")[0].strip('>')
 
     # Now, let's get the list of the most possible promoters per each identified promoters
     # In other words, the promoters influencing iroN
@@ -145,7 +145,7 @@ def get_promoters(file, promotersDict):
         promoters.append(currentPromoter)
     
     # The first one is the name of the genome, we don't need it in the list per se
-    genomeName = fileLines[0].split(".")[0].strip('>')
+    genomeName = fileLines[0].split("_")[0].strip('>')
 
     # Now, let's get the list of the most possible promoters per each identified promoters
     # In other words, the promoters influencing iroN
