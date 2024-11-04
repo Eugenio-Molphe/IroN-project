@@ -4,6 +4,11 @@
 #### 26.04.2024 and 8.05.2024 ####
 #### Blast our sequences against the iroN database ####
 
+# Usage: script.sh input.fasta database output.txt
+# $in: input query sequences (FASTA format)
+# $db: BLAST database
+# $out: output file for BLAST results
+
 in=$1
 db=$2
 out=$3

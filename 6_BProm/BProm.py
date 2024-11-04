@@ -1,6 +1,9 @@
 #### Eugenio Perez Molphe Montoya ####
 #### 03.06.2024 ####
 #### This script allows me to use BProm for my files ####
+#### The website option, not the software we purchased ####
+#### Thing is that we have to many sequences to analyze in the website ####
+#### So we decided to use the locally installed software (run_bprom.sh) ####
 
 
 ### Import packages
